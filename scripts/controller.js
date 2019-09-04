@@ -31,8 +31,7 @@ var disConnect = document.getElementById("dcnt");
 
 connect.addEventListener('click', function(e){
 	e.preventDefault();
-	let add = document.getElementById("broker").value;
-	client = mqtt.connect(add)
+	client = mqtt.connect("wss://test.mosquitto.org:8081/mqtt")
     client.on("connect", function(){
 	let stat = document.getElementById("cnt").innerHTML = "Connected";
 	let stat1 = document.getElementById("dcnt").innerHTML = "Disonnected";
