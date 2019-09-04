@@ -1,0 +1,93 @@
+<html>
+<head>
+  <title>mows</title>
+</head>
+<style>
+    input[type=text], select {
+      width: 30%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+
+    }
+ 
+    
+    button{
+      background-color:gray;
+      padding: 12px 18px; 
+      width: 15%;
+      border-radius: 12px;
+      padding: 10px 20px;
+      background-color: dodgerblue;
+      border: 1px solid #ddd;
+    }
+
+    .btn:hover{
+      background-color: blue;
+    }
+
+    #cnt{
+      background-color: green;
+    }
+
+    #dcnt{
+      background-color: red;
+    }
+    
+    div {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    h4{
+      padding:12px 20px;
+      background-color:skyblue;
+    }
+
+    </style>
+<body>
+  
+  <h1 style="text-align:center">MQTT</h1>
+  <p style="text-align:center">My MQTT Web App</p>
+
+<!-- for the broker -->
+  <!-- <h4>Broker</h4> -->
+  <div>
+      <form class ="inline">
+        <label for="add">Broker</label><br>
+        <input type="text" id="broker" name="brok" ><br>
+        <button id="cnt" class="btn">connect</button><br>
+        <button id="dcnt" class="btn">disconnect</button><br><br>
+
+
+        <label for="add">Topic</label><br>
+        <input type="text" id="topic" name="top" class="txt"><br>
+        <label for="add">Payload</label><br>
+        <input type="text" id="pl" name="pl" class="txt">
+        <button id="pub" class="btn">Publish</button><br>
+
+        <label for="add">Topic</label><br>
+        <input type="text" id="tpc" name="tpc">
+        <button id="sub" class="btn">Subscribe</button><br>
+    
+  
+      </form>
+    </div>
+
+<!-- incoming messages -->  
+    <h4>Incoming messages</h4>
+    <div>
+      <p id="mess"></p>
+    </div>
+
+</body>
+
+
+
+<script src="scripts/browserMqtt.js"></script>
+<script src="scripts/controller.js"></script>
+</html>
