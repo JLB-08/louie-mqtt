@@ -44,7 +44,7 @@ $(document).ready(function () {
 		client.subscribe(topicSubs);
 	});
 
-	$("#btnPublish").click(function () {
+	$("#pub").click(function () {
 		let top = "mqtt/" + $("#topicToPublish").val();
 		let payld = $("#payloadToPublish").val();
 		client.publish(top, payld);
