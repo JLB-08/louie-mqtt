@@ -35,7 +35,7 @@ function connectFunc(){
    var cell3 = row.insertCell(2);
    cell1.innerHTML = topic.value;
    cell2.innerHTML = publish.value;
-   cell3.innerHTML = d;
+   cell3.innerHTML = new Date();
 
   }
   

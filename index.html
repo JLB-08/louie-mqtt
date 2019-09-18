@@ -85,7 +85,8 @@
     table {
       font-family: arial, sans-serif;
       border-collapse: collapse;
-      width: 100%;
+      width: 48%;
+      margin-left: 76px;
     }
 
     td, th {
@@ -102,8 +103,10 @@
 
 <body>
 <center>
+  <header>
   <h1>MQTT</h1>
   <p>My MQTT Web App </p>
+</header>
 </center>
 
   Broker: <input type="text" id="broker" value="ws://broker.hivemq.com:8000/mqtt">
@@ -129,7 +132,7 @@
   <button id="subscribe" onclick="subscribeFunc()">Subscribe</button><br><br>
 
  
-  <table id="table">
+  <table id="table" style="background-color:skyblue">
     <tr>
       <th>Topic</th>
       <th>Payload</th>
