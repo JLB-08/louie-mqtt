@@ -5,7 +5,11 @@
 <head>
 	<style>
 
-input[type=text], select {
+    body{
+      background-image:("https://www.iotworldtoday.com/files/2017/05/ThinkstockPhotos-638342536-4-877x432.jpg");
+    }
+
+    input[type=text], select {
       width: 50%;
       padding: 12px 20px;
       margin: 8px 0;
@@ -69,21 +73,46 @@ input[type=text], select {
 	    width: 48%;
     } 
 
+    #p{
+      padding: 10px 16px;
+      border-radius: 4px;
+      padding: 8px 18px;
+      border: 1px solid green;
+      width: 80px;
+      text-align: center;
+    }
+
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
 
 </style>
 
   <title>MQTT</title>
 </head>
+
 <body>
+<center>
   <h1>MQTT</h1>
   <p>My MQTT Web App </p>
-  Broker: <input type="text" id="broker" value="wss://test.mosquitto.org:8080/mqtt">
+</center>
+
+  Broker: <input type="text" id="broker" value="ws://broker.hivemq.com:8000/mqtt">
   <br>
   <button id="cnt" onclick="connectFunc()">Connect</button>
   <button id="dcnt" onclick="disconnect()">Disconnect</button>
   <br>
 
-  <h5 id="div1"></h5>
+  <p id="p">Status</p>
 
   <br>
   Topic: <input type="text" id="pub" >
@@ -97,26 +126,17 @@ input[type=text], select {
   <br>
   Topic: <input type="text" id="sub-topic" >
   <br>
-  <button id="subscribe" onclick="subscribeFunc()">Subscribe</button><br>
+  <button id="subscribe" onclick="subscribeFunc()">Subscribe</button><br><br>
 
-  <div id="container">
+ 
+  <table id="table">
+    <tr>
+      <th>Topic</th>
+      <th>Payload</th>
+      <th>Timestamp</th>
+    </tr>
+  </table>
 
-
-		<table id="messages" class="table table-hover table-scroll small-first-col">
-			<thead id="thead"><br><br>
-				<tr><center><th><h2>Messages</h2></th></center></tr>
-				<tr>
-					<th scope="col">Topic</th>
-					<th scope="col">Payload</th>
-					<th scope="col">Time Stamp</th>
-				</tr>
-			</thead>
-			<tbody id="tbodyContainer" class="body-half-screen">
-
-			</tbody>
-		</table>
-  </div>
-  
 </body>
 <script src="scripts/browserMqtt.js"></script>
 <script src="scripts/controller.js"></script>
