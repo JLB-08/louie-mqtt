@@ -43,7 +43,8 @@ function connectFunc(){
 	// console.log("subscribe");
 	// client.subscribe("mqtt/demo");
 	client.subscribe(document.getElementById('sub-topic').value);
-	console.log("Subscribe { topic: " + document.getElementById('sub-topic').value + " }");
+  console.log("Subscribe { topic: " + document.getElementById('sub-topic').value + " }");
+  document.getElementById("subs").innerHTML = "subscribed";
   }
 
   function disconnect(){
