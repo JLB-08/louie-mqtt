@@ -14,12 +14,32 @@ function connectFunc(){
     document.getElementById("p").innerHTML = "Connected";
 	})
   
-	client.on("message", function (topic, payload) {
-	  // console.log([topic, payload].join(": "));
-	  console.log("Received { topic: " + topic + "; payload: " + payload + " }");
-    // client.end();
+	// client.on("message", function (topic, payload) {
+	//   // console.log([topic, payload].join(": "));
+	//   console.log("Received { topic: " + topic + "; payload: " + payload + " }");
+  //   // client.end();
+  // })
+
+  client.on("message", function (topic, payload) {
+    // let finalTopic = topic.slice(5);
+    console.log([topic, payload].join(": "));
+    let tbl = document.getElementById('receiver');
+    let tbody = document.getElementById('msg');
+    let tr = document.createElement('tr');
+    let msgTopic = document.createElement('td');
+    let msgPayload = document.createElement('td');
+    let msgTime = document.createElement('td');
+    msgTopic.appendChild(document.createTextNode(topic));
+    msgPayload.appendChild(document.createTextNode(payload));
+    msgTime.appendChild(document.createTextNode(moment().format('llll')));
+    tr.appendChild(msgTopic);
+    tr.appendChild(msgPayload);
+    tr.appendChild(msgTime);
+    tbody.appendChild(tr);
+    tbl.appendChild(tbody);
   })
 
+  
   }
   function publishFunc(){
 	// console.log("publish");

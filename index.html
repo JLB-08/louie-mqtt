@@ -133,13 +133,24 @@
   <p id="subs"></p>
 
  
-  <table id="table" style="background-color:skyblue">
+  <!-- <table id="table" style="background-color:skyblue">
     <tr>
       <th>Topic</th>
       <th>Payload</th>
       <th>Timestamp</th>
     </tr>
-  </table>
+  </table> -->
+
+  <table id="receiver" class="table table-hover ">
+    <thead class="thead-dark">
+    <th>Topic</th>
+    <th>Payload</th>
+    <th>Time Stamp</th>
+    </thead>
+    <tbody id="msg">
+    
+    </tbody>
+    </table>
 
 </body>
 <script src="/browserMqtt.js"></script>
